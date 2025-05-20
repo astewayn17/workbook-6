@@ -2,6 +2,8 @@ package com.pluralsight;
 
 import com.pluralsight.finance.Valuable;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 public class Portfolio {
@@ -29,26 +31,34 @@ public class Portfolio {
     }
 
     public Valuable getMostValuable() {
-        if (assets.isEmpty())
-            return null;
-        Valuable mostValuable = assets.get(0);
-        for (Valuable asset : assets) {
-            if (asset.getValue() > mostValuable.getValue()) {
-                mostValuable = asset;
-            }
-        }
-        return mostValuable;
+        if (assets.isEmpty()) return null;
+        assets.sort(Comparator.comparingDouble(Valuable::getValue));
+        return assets.get(0);
+//
+//        return Collections.max(assets, Comparator.comparingDouble(Valuable::getValue));
+//
+//        Valuable mostValuable = assets.get(0);
+//        for (Valuable asset : assets) {
+//            if (asset.getValue() > mostValuable.getValue()) {
+//                mostValuable = asset;
+//            }
+//        }
+//        return mostValuable;
     }
 
     public Valuable getLeastValuable() {
-        if (assets.isEmpty())
-            return null;
-        Valuable leastValuable = assets.get(0);
-        for (Valuable asset : assets) {
-            if (asset.getValue() < leastValuable.getValue()) {
-                leastValuable = asset;
-            }
-        }
-        return leastValuable;
+        if (assets.isEmpty()) return null;
+        assets.sort(Comparator.comparingDouble(Valuable::getValue));
+        return assets.get(assets.size()-1);
+//
+//        return Collections.min(assets, Comparator.comparingDouble(Valuable::getValue));
+//
+//        Valuable leastValuable = assets.get(0);
+//        for (Valuable asset : assets) {
+//            if (asset.getValue() < leastValuable.getValue()) {
+//                leastValuable = asset;
+//            }
+//        }
+//        return leastValuable;
     }
 }

@@ -5,12 +5,10 @@ public class Jewelry extends FixedAsset {
     private double karat;
 
     public Jewelry(String name, double marketValue, double karat) {
-        super(name, marketValue);
+        // Making market value for gold unique by making it equal to the karat x 100
+        super(name, karat * 100);
         this.karat = karat;
     }
-
-    @Override
-    public double getValue() {
-        return marketValue;
-    }
+    // Removed redundant getValue method since its implicitly included
+    // due to this being class' super class having the method in it
 }

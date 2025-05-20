@@ -13,8 +13,6 @@ public class Person implements Comparable<Person> {
         this.firstName = firstName;
     }
 
-
-
     // This overrides the compareTo method from the Comparable interface and uses it to compare the last names
     @Override
     public int compareTo(Person diffPerson) {
