@@ -32,7 +32,7 @@ public class Portfolio {
     public Valuable getMostValuable() {
         if (assets.isEmpty()) return null;
         assets.sort(Comparator.comparingDouble(Valuable::getValue));
-        return assets.get(0);
+        return assets.get(assets.size()-1);
 //
 //        return Collections.max(assets, Comparator.comparingDouble(Valuable::getValue));
 //
@@ -48,7 +48,7 @@ public class Portfolio {
     public Valuable getLeastValuable() {
         if (assets.isEmpty()) return null;
         assets.sort(Comparator.comparingDouble(Valuable::getValue));
-        return assets.get(assets.size()-1);
+        return assets.get(0);
 //
 //        return Collections.min(assets, Comparator.comparingDouble(Valuable::getValue));
 //
