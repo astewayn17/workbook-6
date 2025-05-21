@@ -30,37 +30,39 @@ public class Program {
         // Initializing the oldest and youngest ages the first object
         // Then it assigns the oldest and youngest ages over and over
         // again due to the loop until it's not true to then be left with the correct ones
-        int sumOfAllAges = 0;
-        int oldestAge = people.get(0).getAge();
-        int youngestAge = people.get(0).getAge();
-        for (Person human : people) {
-            sumOfAllAges += human.getAge();
-            if (human.getAge() > oldestAge)
-                oldestAge = human.getAge();
-            if (human.getAge() < youngestAge)
-                youngestAge = human.getAge();
-        }
-        double avg = sumOfAllAges / people.size() - 1;
-        System.out.println("\nThe average of all the ages is " + avg + " years old.");
-        System.out.println("The oldest age is " + oldestAge + " and the youngest age is " + youngestAge + ".");
+//        int sumOfAllAges = 0;
+//        int oldestAge = people.get(0).getAge();
+//        int youngestAge = people.get(0).getAge();
+//        for (Person human : people) {
+//            sumOfAllAges += human.getAge();
+//            if (human.getAge() > oldestAge)
+//                oldestAge = human.getAge();
+//            if (human.getAge() < youngestAge)
+//                youngestAge = human.getAge();
+//        }
+//        double avg = sumOfAllAges / people.size() - 1;
+//        System.out.println("\nThe average of all the ages is " + avg + " years old.");
+//        System.out.println("The oldest age is " + oldestAge + " and the youngest age is " + youngestAge + ".");
 
-        // Asking for user input to locate the name they are searching for
-        System.out.print("\nPlease enter a first or last name: ");
-        String inputName = inputBoi.nextLine().trim();
-        // Making a new empty list called matchedPeople to store that matched people
-        List<Person> matchedPeople = new ArrayList<>();
-        // For every human person object in th people list, if the name matches to
-        // the inputted name, add it to the matchedNames list
-        for (Person human : people)
-            if (human.getFirstName().equalsIgnoreCase(inputName) || human.getLastName().equalsIgnoreCase(inputName))
-                matchedPeople.add(human);
-        if (matchedPeople.isEmpty())
-            System.out.println("\nNo people found under the entered name.");
-        else {
-            System.out.println("\nCorresponding people: \n");
-            for (Person human : matchedPeople) {
-                System.out.println(human);
-            }
-        }
+//        // Asking for user input to locate the name they are searching for
+//        System.out.print("\nPlease enter a first or last name: ");
+//        String inputName = inputBoi.nextLine().trim();
+//        // Making a new empty list called matchedPeople to store that matched people
+//        List<Person> matchedPeople = new ArrayList<>();
+//        // For every human person object in th people list, if the name matches to
+//        // the inputted name, add it to the matchedNames list
+
+
+//        for (Person human : people)
+//            if (human.getFirstName().equalsIgnoreCase(inputName) || human.getLastName().equalsIgnoreCase(inputName))
+//                matchedPeople.add(human);
+//        if (matchedPeople.isEmpty())
+//            System.out.println("\nNo people found under the entered name.");
+//        else {
+//            System.out.println("\nCorresponding people: \n");
+//            for (Person human : matchedPeople) {
+//                System.out.println(human);
+//            }
+//        }
     }
 }
