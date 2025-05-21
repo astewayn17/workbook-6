@@ -40,7 +40,8 @@ public class Program {
             if (human.getAge() < youngestAge)
                 youngestAge = human.getAge();
         }
-        System.out.println("\nThe sum of all the ages is " + sumOfAllAges + " years old.");
+        double avg = sumOfAllAges / people.size() - 1;
+        System.out.println("\nThe average of all the ages is " + avg + " years old.");
         System.out.println("The oldest age is " + oldestAge + " and the youngest age is " + youngestAge + ".");
 
         // Asking for user input to locate the name they are searching for
